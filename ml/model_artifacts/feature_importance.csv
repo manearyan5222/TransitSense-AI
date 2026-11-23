@@ -1,0 +1,16 @@
+Feature,RandomForest_Importance,XGBoost_Importance
+hist_mean_load,0.35524,0.81737
+hist_p85_load,0.28414,0.07462
+is_rush_hour,0.0405,0.02462
+stop_sequence,0.11649,0.01602
+is_metro_hub,0.00713,0.01262
+route_progress,0.04732,0.01049
+day_of_week,0.01317,0.00932
+hour,0.00963,0.00627
+dow_sin,0.00972,0.00446
+route_code,0.07699,0.00437
+hour_cos,0.00628,0.00434
+hour_sin,0.01009,0.00427
+dow_cos,0.00279,0.0039
+bus_capacity,0.00958,0.00376
+is_weekend,0.01092,0.00357

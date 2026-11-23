@@ -1,0 +1,3 @@
+agency_id,agency_name,agency_url,agency_timezone
+DTC,Delhi Transport Corporation,https://dtc.delhi.gov.in,Asia/Kolkata
+DIMTS,Delhi Integrated Multi-Modal Transit System,https://dimts.in,Asia/Kolkata

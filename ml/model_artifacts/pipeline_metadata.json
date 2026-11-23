@@ -1,0 +1,40 @@
+{
+  "global_prior_mean": 28.154,
+  "feature_columns": [
+    "route_code",
+    "stop_sequence",
+    "route_progress",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "day_of_week",
+    "dow_sin",
+    "dow_cos",
+    "is_weekend",
+    "is_rush_hour",
+    "is_metro_hub",
+    "bus_capacity",
+    "hist_mean_load",
+    "hist_p85_load"
+  ],
+  "target_column": "in_vehicle_load",
+  "route_encoding": {
+    "DTC_534": 1,
+    "DTC_764": 2,
+    "DTC_502": 3,
+    "DTC_427": 4,
+    "DTC_620": 5
+  },
+  "metro_hubs": [
+    "ST_AV01",
+    "ST_OD03",
+    "ST_AV25",
+    "ST_ND01",
+    "ST_AV10",
+    "ST_AV08",
+    "ST_AV18",
+    "ST_NG02",
+    "ST_AV05",
+    "ST_NG10"
+  ]
+}

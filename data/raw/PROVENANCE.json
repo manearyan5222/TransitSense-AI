@@ -1,0 +1,7 @@
+{
+  "directory": "data/raw",
+  "provenance_classification": "SYNTHETIC",
+  "notice": "All files in this directory are statistically simulated representations of Delhi bus ETM ticketing transactions designed to evaluate system pipelines under realistic missing-data conditions. None of these records represent actual real-world commuters.",
+  "contains_real_passengers": false,
+  "authoritative_source": "scripts/generate_delhi_october_data.py"
+}

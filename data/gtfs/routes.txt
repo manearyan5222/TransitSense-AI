@@ -1,0 +1,6 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,is_ac
+DTC_534,DTC,534,Anand Vihar ISBT to Mehrauli Terminal,3,0
+DTC_764,DTC,764,Najafgarh Terminal to Nehru Place Terminal,3,0
+DTC_427,DTC,427,New Delhi Railway Station to Badarpur Border,3,1
+DTC_502,DTC,502,Old Delhi Railway Station to Mehrauli Terminal,3,0
+DTC_620,DTC,620,Shivaji Stadium to Vasant Kunj,3,1

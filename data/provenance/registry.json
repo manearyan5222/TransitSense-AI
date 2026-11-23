@@ -1,0 +1,107 @@
+{
+  "project": "TransitSense AI",
+  "provenance_standard_version": "1.0.0",
+  "audit_date": "2026-11-20",
+  "lead_author": "Principal Data Engineering and ML Validation Lead",
+  "classification_taxonomy": {
+    "OFFICIAL": "Data originating directly from authoritative government or transit agency systems (Delhi Transport Corporation, DIMTS, Delhi Open Transit Data portal) with verifiable cryptographic hashes or official distribution URLs.",
+    "SYNTHETIC": "Data generated through statistical simulation, heuristic modeling, or generative processes designed to replicate operational schemas when official data is restricted or pending release.",
+    "DERIVED": "Processed datasets, transformed features, aggregated indices, or serialized models generated deterministically from an identified upstream source (OFFICIAL or SYNTHETIC)."
+  },
+  "datasets": [
+    {
+      "path": "data/raw/delhi_etm_october_2026.csv",
+      "provenance": "SYNTHETIC",
+      "source_generator": "scripts/generate_delhi_october_data.py",
+      "records_count": 84814,
+      "size_bytes": 13677294,
+      "description": "Statistically simulated ETM ticketing transaction records representing October 2026 DTC bus operations across 5 corridors, incorporating realistic missing alightings and Pink Pass concession tickets.",
+      "is_authoritative": false,
+      "contains_real_passengers": false
+    },
+    {
+      "path": "data/gtfs/agency.txt",
+      "provenance": "DERIVED",
+      "source": "Delhi Transport Corporation & DIMTS institutional metadata",
+      "records_count": 2,
+      "is_authoritative": true
+    },
+    {
+      "path": "data/gtfs/routes.txt",
+      "provenance": "DERIVED",
+      "source": "Delhi NCT arterial transit corridor definitions (Routes 534, 764, 427, 502, 620)",
+      "records_count": 5,
+      "is_authoritative": true
+    },
+    {
+      "path": "data/gtfs/stops.txt",
+      "provenance": "DERIVED",
+      "source": "WGS84 geocoded bus stops mapped to Delhi OpenStreetMap and DTC terminal locations",
+      "records_count": 47,
+      "is_authoritative": true
+    },
+    {
+      "path": "data/gtfs/trips.txt",
+      "provenance": "DERIVED",
+      "source": "Scheduled trip duty rosters for monitored corridors",
+      "records_count": 28,
+      "is_authoritative": false
+    },
+    {
+      "path": "data/gtfs/stop_times.txt",
+      "provenance": "DERIVED",
+      "source": "Sequential scheduled arrival/departure stop times",
+      "records_count": 724,
+      "is_authoritative": false
+    },
+    {
+      "path": "data/processed/cleaned_etm_october_2026.csv",
+      "provenance": "DERIVED",
+      "upstream_input": "data/raw/delhi_etm_october_2026.csv [SYNTHETIC]",
+      "records_count": 83743,
+      "transformation": "Deduplication, passenger count bounds filtering [1-8], fare range cleansing [0-60], Pink Pass validation",
+      "is_authoritative": false
+    },
+    {
+      "path": "data/processed/reconstructed_segment_crowd.csv",
+      "provenance": "DERIVED",
+      "upstream_input": "data/processed/cleaned_etm_october_2026.csv [SYNTHETIC]",
+      "records_count": 18500,
+      "transformation": "Flow Conservation Solver L(s) = L(s-1) + B(s) - A(s) with power-law heuristic alighting allocation",
+      "is_authoritative": false
+    },
+    {
+      "path": "data/processed/train_features.csv",
+      "provenance": "DERIVED",
+      "upstream_input": "data/processed/reconstructed_segment_crowd.csv [SYNTHETIC]",
+      "records_count": 12500,
+      "partition": "October 1–21, 2026 (Chronological Training Set)",
+      "is_authoritative": false
+    },
+    {
+      "path": "data/processed/val_features.csv",
+      "provenance": "DERIVED",
+      "upstream_input": "data/processed/reconstructed_segment_crowd.csv [SYNTHETIC]",
+      "records_count": 3535,
+      "partition": "October 22–26, 2026 (Chronological Validation Set)",
+      "is_authoritative": false
+    },
+    {
+      "path": "data/processed/test_features.csv",
+      "provenance": "DERIVED",
+      "upstream_input": "data/processed/reconstructed_segment_crowd.csv [SYNTHETIC]",
+      "records_count": 2465,
+      "partition": "October 27–31, 2026 (Chronological Test Set)",
+      "is_authoritative": false
+    },
+    {
+      "path": "ml/model_artifacts/best_model.joblib",
+      "provenance": "DERIVED",
+      "training_dataset": "data/processed/train_features.csv [SYNTHETIC]",
+      "algorithm": "XGBRegressor",
+      "benchmark_test_mae": 5.1913,
+      "benchmark_test_wape": 19.17,
+      "is_real_world_validated": false
+    }
+  ]
+}

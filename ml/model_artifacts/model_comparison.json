@@ -1,0 +1,72 @@
+{
+  "best_model_name": "XGBoost",
+  "test_dataset_size": 2465,
+  "validation_dataset_size": 3535,
+  "training_dataset_size": 12500,
+  "feature_count": 15,
+  "comparison": [
+    {
+      "model_name": "Historical Baseline",
+      "mae": 5.2946,
+      "rmse": 7.6791,
+      "wape_pct": 19.55,
+      "r2_score": 0.9,
+      "peak_hour_mae": 5.6299,
+      "peak_hour_wape_pct": 15.16,
+      "crowd_tier_accuracy_pct": 84.22,
+      "crowd_tier_macro_f1": 0.7314,
+      "false_low_rate_pct": 0.0
+    },
+    {
+      "model_name": "Random Forest",
+      "mae": 5.2067,
+      "rmse": 7.2732,
+      "wape_pct": 19.22,
+      "r2_score": 0.9103,
+      "peak_hour_mae": 5.7248,
+      "peak_hour_wape_pct": 15.42,
+      "crowd_tier_accuracy_pct": 85.19,
+      "crowd_tier_macro_f1": 0.7442,
+      "false_low_rate_pct": 0.0
+    },
+    {
+      "model_name": "XGBoost",
+      "mae": 5.1913,
+      "rmse": 7.2894,
+      "wape_pct": 19.17,
+      "r2_score": 0.9099,
+      "peak_hour_mae": 5.7581,
+      "peak_hour_wape_pct": 15.51,
+      "crowd_tier_accuracy_pct": 84.99,
+      "crowd_tier_macro_f1": 0.7375,
+      "false_low_rate_pct": 0.0
+    }
+  ],
+  "feature_importance_top5": [
+    {
+      "Feature": "hist_mean_load",
+      "RandomForest_Importance": 0.35524,
+      "XGBoost_Importance": 0.81737
+    },
+    {
+      "Feature": "hist_p85_load",
+      "RandomForest_Importance": 0.28414,
+      "XGBoost_Importance": 0.07462
+    },
+    {
+      "Feature": "is_rush_hour",
+      "RandomForest_Importance": 0.0405,
+      "XGBoost_Importance": 0.02462
+    },
+    {
+      "Feature": "stop_sequence",
+      "RandomForest_Importance": 0.11649,
+      "XGBoost_Importance": 0.01602
+    },
+    {
+      "Feature": "is_metro_hub",
+      "RandomForest_Importance": 0.00713,
+      "XGBoost_Importance": 0.01262
+    }
+  ]
+}
