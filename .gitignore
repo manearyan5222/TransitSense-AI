@@ -55,5 +55,6 @@ Thumbs.db
 *.swo
 *~
 
-# Temporary Logs
+# Temporary Logs & Demo Captures
 *.log
+demo_artifacts/

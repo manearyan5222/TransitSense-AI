@@ -14,6 +14,15 @@ TransitSense AI solves this challenge by ingesting Delhi Transport Stack **Elect
 
 ---
 
+## 🎥 Platform Demonstration Video
+
+[![TransitSense AI Demo Video](TransitSense_AI_Demo_Thumbnail.png)](TransitSense_AI_Demo.mp4)
+
+> 📹 **Watch the Walkthrough:** [**TransitSense_AI_Demo.mp4**](TransitSense_AI_Demo.mp4) *(Full HD 1080p, 2 minutes 44 seconds, 5.91 MB)*  
+> A complete end-to-end walkthrough across all 7 platform pages: Overview & KPIs, Data Provenance Disclosure Modal, Multi-Objective Journey Planner with AI Recommendation Analysis, Corridor Route Comparison, Diurnal Crowd Curves, Interactive Delhi Map (with 24-hr time presets), What-If Simulator, and Model Analytics.
+
+---
+
 ## 🌐 Hackathon Resources & Official Data Platform
 
 - **Hackathon Page & Full Problem Briefs:** [https://delhi.transportstack.in/hackathon](https://delhi.transportstack.in/hackathon)
